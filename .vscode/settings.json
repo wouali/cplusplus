@@ -1,0 +1,6 @@
+{
+  // The CMake generator to use
+  "cmake.generator": "Visual Studio 15 2017 Win64",
+  // The path to CMake generator executable
+  "cmake.cmakePath": "C:/Program Files/CMake/bin/cmake.exe",
+}
