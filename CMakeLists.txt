@@ -4,6 +4,8 @@
 cmake_minimum_required(VERSION 3.1)
 project (HELLO CXX)
 
+include(CMakeToolsHelpers OPTIONAL)
+
 # Specify the C++ Standard version to use.
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
