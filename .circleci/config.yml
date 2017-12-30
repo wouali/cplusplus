@@ -9,8 +9,7 @@ jobs:
           name: Recherche des dépendances
           command: > 
             apt-get update && apt-get -y install 
-            libboost-tools-dev cmake ninja-build build-essential &&
-            inspect --help
+            libboost-tools-dev cmake ninja-build build-essential
       - run:
           name: Génération du dossier de build et creation du projet cmake
           command: mkdir build && cd build && cmake ../ -G Ninja
