@@ -7,11 +7,24 @@ jobs:
       - checkout
       - run:
           name: Recherche des dépendances
-          command: apt-get update && apt-get -y install cmake ninja-build build-essential
+          command: > 
+            apt-get update && apt-get -y install 
+            libboost-tools-dev cmake ninja-build build-essential
       - run:
           name: Génération du dossier de build et creation du projet cmake
           command: mkdir build && cd build && cmake ../ -G Ninja
       - run:
           name: Compilation du code c++
           command: cd build && ninja
-
+      - run:
+          name: Inspection du code c++
+          command: >
+            mkdir inspect_dir &&
+            cp `ls source/*.cpp` `ls include/*.hpp` inspect_dir/. &&
+            inspect inspect_dir
+            -copyright -crlf -end -link -path_name -tab -ascii -apple_macro
+            -assert_macro -deprecated_macro -minmax -unnamed
+            > inspect_report.html
+      - store_artifacts:
+          path: inspect_report.html
+          destination: artefact
