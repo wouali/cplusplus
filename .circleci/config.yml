@@ -20,7 +20,10 @@ jobs:
           name: Inspection du code c++
           command: >
             mkdir inspect_dir &&
-            cp `ls source/*.cpp` `ls include/*.hpp` inspect_dir/. &&
+            cp
+            `find ./source -name '*.cpp'`
+            `find ./include -name '*.hpp'`
+            inspect_dir/. &&
             inspect inspect_dir
             -copyright -crlf -end -link -path_name -tab -ascii -apple_macro
             -assert_macro -deprecated_macro -minmax -unnamed
