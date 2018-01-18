@@ -6,7 +6,7 @@
 
 int main()
 {
-    // Afffichage sur un terminal
+    // Affichage sur un terminal
     std::cout << "Hello World!" << std::endl;
 
     return 0;
