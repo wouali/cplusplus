@@ -4,12 +4,10 @@
 #include <iostream>
 #include <my_header.hpp>
 
-int main()
+int main (void)
 {
-	double r1;
-	r1 = exo1(10.0);
-    // Affichage sur un terminal
-    std::cout << "Hello World!" << std::endl;
+	exo2();
+	return 0;
 
-    return 0;
+	
 }
